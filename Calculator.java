@@ -138,6 +138,15 @@ public class Calculator {
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
                             }
                         }
+                        else if(buttonValue == "√") {
+                            if(operator == null) {
+                                A = displayLabel.getText();
+                            }
+                            operator = buttonValue;
+                            double numA = Double.parseDouble(A);
+                            displayLabel.setText(removeZeroDecimal(Math.pow(numA, 0.5)));
+                            clearAll();
+                        }
                         else if("0123456789".contains(buttonValue)) {
                             if(displayLabel.getText() == "0") {
                                 displayLabel.setText(buttonValue);
